@@ -1,11 +1,12 @@
 #!/bin/sh -ex
 
+cd _book
+
 # git config
+git init
 git config user.name "Travis CI"
 git config user.email "yutannihilation@example.com"
 
-cd _book
-git init
 git add .
 git commit -m "deploy to Github Pages"
 
