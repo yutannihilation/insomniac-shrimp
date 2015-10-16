@@ -3,7 +3,7 @@ install: npm install gitbook-cli
 script:
   - gitbook build
 after_success:
-  - test "$TRAVIS_BRANCH" == "master" && test -n "$GH_TOKEN" && deploy.sh
+  - test "$TRAVIS_BRANCH" == "master" && test -n "$GH_TOKEN" && ./deploy.sh
 env:
   global:
     - GH_REF: github.com/yutannihilation/insomniac-shrimp.git
