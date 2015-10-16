@@ -1,0 +1,11 @@
+language: node_js
+install: npm install gitbook
+script:
+  - gitbook build
+after_success:
+  - test "$TRAVIS_BRANCH" == "master" && test -n "$GH_TOKEN" && deploy.sh
+env:
+  global:
+    - GH_REF: github.com/yutannihilation/insomniac-shrimp.git
+    - secure: "hPIyUrU1azIigpNiN92PJmh+MubpxS3fiIAn/iaIcLAuau8FBTLECWSxS+uSvMANOeXDFbOZmYp4Yv3BMS8NHooJ5BlgTDIi9tMWRrVkd8M69DgFF7vBcEWDUVrcd6WdQSicPbJnJqMcgBBcp1vbIU7zMcu01/Q6FCKX+gbemw1QeqMRKibcATx8CZUxlIpTpp27AKAEWsq3dQBnMSXp1Oh5XXZ/QqWcx7QIx/vqu5bi0CPjXGfNcUAEhBfvglcLxyQNkoQY5vSUsR62/V7z5QdxYcGOHDdG9TEBsRbq1jUzDGVCs+jDe75DHavOndsgtJcFjej4+qbFa45deGw18zvvtIoZ0B2JRYgH1r9nS6Xc5bsbKVDV8hN4fRFbePCHBuBNj+/xvmdjAKkEkl9oKnblR/q2ayOnP74kCSPjfHUkDVheCDr1v4PrfZM0padAsnGutz3OUWz000D8o9FpMtysgfVdjipP9n4425NKlJ2dtnGDTtyjPAJ7vTEIW8/JOm68qQRnU4BB4qlGvxb+ZKblVu7fW3JKjPCkg7v3oDrz4lbYxy2jQ6yfcU8aJAX6R7K9GnS67PEv+S4NXrry3RzuxQpN1FuUBRptG50W4xfruq1g3+NXK7ymVC/WH+jVNyK9GoMut+4BrHN8uj6VsQGkIwyNcOs3ouMC0pbAWRY=" 
+
