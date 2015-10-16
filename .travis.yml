@@ -1,11 +1,10 @@
 language: node_js
 install: npm install gitbook-cli
 script:
-  - gitbook build
+- gitbook build
 after_success:
-  - test "$TRAVIS_BRANCH" == "master" && test -n "$GH_TOKEN" && sh -ex ./deploy.sh
+- test "$TRAVIS_BRANCH" == "master" && test -n "$GH_TOKEN" && sh -e ./deploy.sh
 env:
   global:
-    - GH_REF: github.com/yutannihilation/insomniac-shrimp.git
-    - secure: "hPIyUrU1azIigpNiN92PJmh+MubpxS3fiIAn/iaIcLAuau8FBTLECWSxS+uSvMANOeXDFbOZmYp4Yv3BMS8NHooJ5BlgTDIi9tMWRrVkd8M69DgFF7vBcEWDUVrcd6WdQSicPbJnJqMcgBBcp1vbIU7zMcu01/Q6FCKX+gbemw1QeqMRKibcATx8CZUxlIpTpp27AKAEWsq3dQBnMSXp1Oh5XXZ/QqWcx7QIx/vqu5bi0CPjXGfNcUAEhBfvglcLxyQNkoQY5vSUsR62/V7z5QdxYcGOHDdG9TEBsRbq1jUzDGVCs+jDe75DHavOndsgtJcFjej4+qbFa45deGw18zvvtIoZ0B2JRYgH1r9nS6Xc5bsbKVDV8hN4fRFbePCHBuBNj+/xvmdjAKkEkl9oKnblR/q2ayOnP74kCSPjfHUkDVheCDr1v4PrfZM0padAsnGutz3OUWz000D8o9FpMtysgfVdjipP9n4425NKlJ2dtnGDTtyjPAJ7vTEIW8/JOm68qQRnU4BB4qlGvxb+ZKblVu7fW3JKjPCkg7v3oDrz4lbYxy2jQ6yfcU8aJAX6R7K9GnS67PEv+S4NXrry3RzuxQpN1FuUBRptG50W4xfruq1g3+NXK7ymVC/WH+jVNyK9GoMut+4BrHN8uj6VsQGkIwyNcOs3ouMC0pbAWRY=" 
-
+  - GH_REF: github.com/yutannihilation/insomniac-shrimp.git
+  - secure: AVLgG95zxXd/AoIGcKdISaJLs/QZH4zCfTubw9w23B8qubyF/83iBGR77t9wrKQtRJ4zSnRue7RpobY8Zr2Wd5dtsrNox9IIvBzhx7p/3QYYriIrjGMBBeXpWy62ozYAyPZhHSyFVc+mN2V7pxyhozO3PNd5G0TOWuLqDYQwHJhE66s1folE8BiueYt6WX+SJfNz9cxkLGIRSMus0FChXdpPi0hUn8yPYhhvXTtq3LN1eDgkrliscAbu/IXvHZg2mtKEbfBbwNfLvpIQxcfLQjDegbN1F6geRBFYw9KNZZdwyhnI3aneZouDtuoZyUUjKDf1eoBlispjxfsLXRmFAEdtIoZKGxgYwaatd6Kw/TVrsHhZfxReXOoaSskJzQ0l4nNOGmW84gOevxn51iMaf0l1WUmCqaIJvLoeSK3wxL6czMQoBOeW0u35AJcdrQdKQ2YcvSWw+FGqXKM03ioPNcVKWrJ4/Qo3nR+0vjCN3MKZhPWkNXIBsgmziaIlYWOOT+In2Flgy6S/T7wAa23F1WyN4+WLvBAEX4Zfo8lA3XTy82J5ysjTmXSIdSb8RXmVXUt2CtouOYoQEoB1HekHEUwyubxwIYYsMAWCyQcIVb2ur6dd2DiBnahInbYm8HjuYlFzQheMDs9Fa+wrcfX0xqNRGHfW+qaQMyVIrnK/hGU=
