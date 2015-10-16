@@ -8,4 +8,4 @@ cd _book
 git add .
 git commit -m "deploy to Github Pages"
 
-git push "https://${GH_TOKEN}@${GH_REF}" gh-pages > /dev/null 2>&1
+git push --quiet "https://${GH_TOKEN}@${GH_REF}" gh-pages > /dev/null 2>&1
