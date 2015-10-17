@@ -1,2 +1,2 @@
 .travis.yml
-deploy.sh
+*.sh
